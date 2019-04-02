@@ -12,6 +12,7 @@ import throttle from 'lodash.throttle';
 
 const AFFIXED_EVENT_NAME = 'affixed';
 const RELEASED_EVENT_NAME = 'released';
+const MOBILE_BREAKPOINT = 756;
 
 export default {
     name: "AAffix",
@@ -33,6 +34,7 @@ export default {
         },
 
         disableMobile: Boolean,
+        mobileOnly: Boolean,
         bottom: Boolean,
     },
 
@@ -46,6 +48,16 @@ export default {
 
     computed: {
         isEnabled() {
+            const screenSize = window.innerWidth;
+            // disable on mobile
+            if(screenSize < MOBILE_BREAKPOINT && this.disableMobile) {
+                return false;
+            }
+            // disable on desktop
+            if(screenSize > MOBILE_BREAKPOINT && this.mobileOnly) {
+                return false;
+            }
+
             return true;
         },
 
