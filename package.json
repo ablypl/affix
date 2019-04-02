@@ -1,6 +1,6 @@
 {
   "name": "aaffix",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Package that affixes elements on page during scroll event",
   "main": "index.js",
   "repository": {
