@@ -1,0 +1,22 @@
+{
+  "name": "aaffix",
+  "version": "0.0.1",
+  "description": "Package that affixes elements on page during scroll event",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ablypl/vue-affix.git"
+  },
+  "keywords": [
+    "vue",
+    "affix",
+    "floating",
+    "elements"
+  ],
+  "author": "Sebastian Szczepanski <sebastian@ably.pl> (http://ably.pl)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ablypl/vue-affix/issues"
+  },
+  "homepage": "https://github.com/ablypl/vue-affix#readme"
+}
