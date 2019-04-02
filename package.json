@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/ablypl/vue-affix/issues"
   },
-  "homepage": "https://github.com/ablypl/vue-affix#readme"
+  "homepage": "https://github.com/ablypl/vue-affix#readme",
+  "dependencies": {
+    "lodash.throttle": "^4.1.1"
+  }
 }

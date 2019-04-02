@@ -10,6 +10,9 @@
 <script>
 import throttle from 'lodash.throttle';
 
+const AFFIXED_EVENT_NAME = 'affixed';
+const RELEASED_EVENT_NAME = 'released';
+
 export default {
     name: "AAffix",
     props: {
@@ -82,6 +85,8 @@ export default {
 
     watch: {
         fixed(fixed) {
+            this.$emit(fixed ? AFFIXED_EVENT_NAME : RELEASED_EVENT_NAME);
+
             if (!fixed) {
                 return;
             }
