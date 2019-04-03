@@ -1,7 +1,7 @@
 <template>
   <div ref="wrapper">
     <div ref="breakpoint" />
-    <div :style="wrapperStyles">
+    <div :style="wrapperStyles" :class="{'fixed' : fixed}">
       <slot />
     </div>
   </div>
@@ -132,14 +132,13 @@ export default {
             this.top = this.offset;
 
             this.styles = {
-                height: `${height}px`,
                 left: `${left}px`,
                 width: `${width}px`,
-                transition: 'all 0.3s ease',
             };
 
             if (!this.bottom) {
                 this.$set(this.styles, 'top', `${this.top}px`);
+                this.$set(this.styles, 'transition', 'bottom .1s ease-out');
             }
 
             if (this.bottom) {
@@ -186,7 +185,7 @@ export default {
         },
 
         bindEvents() {
-            window.addEventListener('scroll', throttle(this.handleChange, 20));
+            window.addEventListener('scroll', throttle(this.handleChange, 10));
             window.addEventListener('resize', this.handleChange);
         },
 
