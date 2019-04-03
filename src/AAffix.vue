@@ -152,7 +152,7 @@ export default {
         },
 
         handleChange() {
-            const { y } = this.fixed
+            const { y, top } = this.fixed
                 ? this.$refs.breakpoint.getBoundingClientRect()
                 : this.$refs.wrapper.getBoundingClientRect();
 
@@ -164,7 +164,7 @@ export default {
 
             if (this.boundary) {
                 const { bottom } = this.boundaryNode.getBoundingClientRect();
-                this.fixed = bottom >= 0;
+                this.fixed = bottom >= 0 && top - this.offset <= 0;
 
                 this.top = this.offset;
 
